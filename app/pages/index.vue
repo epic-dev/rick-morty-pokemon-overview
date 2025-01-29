@@ -5,7 +5,8 @@
       <div class="py-2 text-center">
         <h1
           class="
-            text-white
+            dark:text-white
+            text-slate-700
             font-bold
             font-exo
             uppercase

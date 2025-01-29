@@ -6,13 +6,13 @@ const tvShows = [
     id: 'rickandmortyId',
     label: 'Rick & Morty',
     location: 'rickandmorty',
-    imageUrl: '~/rick-and-morty-card.png',
+    imageUrl: '/images/rick-and-morty-overview-card.png',
   },
   {
     id: 'pokemonId',
     label: 'Pokémon',
     location: 'pokemon',
-    imageUrl: '/images/pokemon.png',
+    imageUrl: '/images/pokemon-overview-card.png',
   },
 ]
 </script>

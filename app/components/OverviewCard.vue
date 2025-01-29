@@ -13,13 +13,18 @@ defineProps({
 <template>
   <UContainer
     class="
-    border
-    border-white
     rounded-md
-    hover:shadow-inner
-    hover:shadow-white
-    hover:bg-white
-    hover:bg-opacity-0
+    border
+    border-slate-700
+    dark:border-white
+    dark:hover:shadow-inner
+    shadow-md
+    hover:shadow-slate-700
+    hover:bg-slate-700
+    dark:hover:shadow-white
+    dark:hover:bg-white
+    dark:hover:bg-opacity-5
+    hover:bg-opacity-5
     group"
   >
     <div class="image_container_FIXME">
@@ -33,12 +38,15 @@ defineProps({
     <div class="px-8 py-4">
       <h3
         class="
-          text-white
-          text-center
-          font-bold
-          lg:text-2xl
-          md:text-xl
-          text-md"
+        text-slate-700
+        dark:text-white
+        group-hover:text-black
+        dark:group-hover:text-white
+        text-center
+        font-bold
+        lg:text-2xl
+        md:text-xl
+        text-md"
       >
         {{ title }}
       </h3>
