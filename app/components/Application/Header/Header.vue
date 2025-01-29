@@ -12,7 +12,7 @@
         </ul>
       </nav>
       <div class="ml-auto">
-        <UButton to="https://github.com/spend-cloud-tom/front-end-boilerplate" icon="mdi:github" color="blue" label="GitHub repository" variant="outline" />
+        <UButton to="https://github.com/epic-dev/rick-morty-pokemon-overview" icon="mdi:github" color="blue" label="Source code" variant="outline" />
       </div>
     </UContainer>
   </header>
