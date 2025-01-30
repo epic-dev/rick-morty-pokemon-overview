@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import HoverableContainer from './HoverableContainer.vue'
+
 defineProps({
   title: {
     type: String,
@@ -11,22 +13,7 @@ defineProps({
 </script>
 
 <template>
-  <UContainer
-    class="
-    rounded-md
-    border
-    border-slate-700
-    dark:border-white
-    dark:hover:shadow-inner
-    shadow-md
-    hover:shadow-slate-700
-    hover:bg-slate-700
-    dark:hover:shadow-white
-    dark:hover:bg-white
-    dark:hover:bg-opacity-5
-    hover:bg-opacity-5
-    group"
-  >
+  <HoverableContainer>
     <div class="image_container_FIXME">
       <NuxtImg
         :alt="title"
@@ -51,7 +38,7 @@ defineProps({
         {{ title }}
       </h3>
     </div>
-  </UContainer>
+  </HoverableContainer>
 </template>
 
 <style scoped></style>
