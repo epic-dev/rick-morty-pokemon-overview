@@ -1,16 +1,18 @@
 <script setup lang="ts">
-import type { IRickAndMortyCharacterApiResponse } from '~/interfaces/api/IRickAndMortyCharacterApiResponse'
+import type { Character } from '~/shared/interfaces/api/rickAndMorty/Character'
 
-// FIXME composable useRickAndMortyData() is not working for some reason, could not be found
-const { data: { value } } = await useAsyncData<IRickAndMortyCharacterApiResponse>(
-  'rickAndMorty',
-  () => $fetch('https://rickandmortyapi.com/api/character'),
-)
-console.warn(value?.results)
+const route = useRoute()
+const params = route.params as { id: string }
+
+const { data: { value: rmCharacter } } = await useRickAndMortyData<Character>(`/character/${params.id}`)
 </script>
 
 <template>
-  <UContainer>
-    <p>Rick & Morty: character details page</p>
+  <UContainer class="py-8">
+    <OverviewCharacterDetails :character-name="rmCharacter?.name" :character-image-url="rmCharacter?.image">
+      <template #characterSpecs>
+        <p>Rick and Morty character specs</p>
+      </template>
+    </OverviewCharacterDetails>
   </UContainer>
 </template>

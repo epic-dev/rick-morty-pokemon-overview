@@ -1,20 +1,6 @@
 <script lang="ts" setup>
-// assume this is being fetched from somewhere
-// TODO move to the store
-const tvShows = [
-  {
-    id: 'rickandmortyId',
-    label: 'Rick & Morty',
-    location: 'rickandmorty',
-    imageUrl: '/images/rick-and-morty-overview-card.png',
-  },
-  {
-    id: 'pokemonId',
-    label: 'Pokémon',
-    location: 'pokemon',
-    imageUrl: '/images/pokemon-overview-card.png',
-  },
-]
+const store = useOverviewStoreStore()
+const tvShows = store.tvShows
 </script>
 
 <template>
