@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <HoverableContainer>
-    <div class="image_container_FIXME">
+    <div class="max-w-52 overflow-hidden">
       <NuxtImg
         :alt="title" sizes="lg:200px md:180px 160px" :src="imageUrl"
         class="filter grayscale group-hover:grayscale-0" placeholder

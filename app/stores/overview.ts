@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 
 export const useOverviewStoreStore = defineStore('overview', () => {
-  type TvShowOverviewLocation = 'pokemon' | 'rickandmorty'
+  type TvShowOverviewLocation = 'pokemon' | 'rick-and-morty'
   interface ITvShow {
     id: string
     label: string
@@ -12,7 +12,7 @@ export const useOverviewStoreStore = defineStore('overview', () => {
     {
       id: 'RickAndMortyShowId',
       label: 'Rick & Morty',
-      location: 'rickandmorty',
+      location: 'rick-and-morty',
       imageUrl: '/images/rick-and-morty-overview-card.png',
     },
     {
