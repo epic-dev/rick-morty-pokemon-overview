@@ -1,5 +1,5 @@
-import type { DateTimeString } from '~/types/DateTimeString'
-import type { StringUrl } from '~/types/StringUrl'
+import type { DateTimeString } from '~/shared/types/DateTimeString'
+import type { StringUrl } from '~/shared/types/StringUrl'
 
 export interface Character {
   id: number

@@ -1,4 +1,4 @@
-import type { StringUrl } from '~/types/StringUrl'
+import type { StringUrl } from '~/shared/types/StringUrl'
 /**
  * many of the properties from the API are not used currently
  * so they are not listed here

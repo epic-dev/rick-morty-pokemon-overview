@@ -1,5 +1,5 @@
 import type { PokemonResponseItem } from './PokemonResponseItem'
-import type { StringUrl } from '~/types/StringUrl'
+import type { StringUrl } from '~/shared/types/StringUrl'
 
 export interface PokemonApiResponse {
   count: number

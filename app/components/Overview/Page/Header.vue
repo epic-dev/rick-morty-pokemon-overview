@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { ViewMode } from '~/types/ViewMode'
+import type { ViewMode } from '~/shared/types/ViewMode'
 
 interface IProps {
   title: string

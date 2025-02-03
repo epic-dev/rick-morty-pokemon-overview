@@ -18,11 +18,8 @@ const store = useViewModeStore()
 <template>
   <OverviewPageHeader title="Wubba Lubba Dub Dub!" />
   <OverviewCharacterList
-    v-if="store.currentMode === 'list'"
+    :is-list="store.currentMode === 'list'"
     :characters="characters"
     :character-details-location="characterDetailsLocation"
   />
-  <div v-if="store.currentMode === 'grid'">
-    rick and morty grid
-  </div>
 </template>

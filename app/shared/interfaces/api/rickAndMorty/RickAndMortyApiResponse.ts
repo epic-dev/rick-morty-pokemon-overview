@@ -1,5 +1,5 @@
 import type { Character } from './Character'
-import type { StringUrl } from '~/types/StringUrl'
+import type { StringUrl } from '~/shared/types/StringUrl'
 
 export interface RickAndMortyApiResponse {
   info: {

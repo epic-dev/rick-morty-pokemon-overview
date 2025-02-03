@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { StringUrl } from '~/types/StringUrl'
+import type { StringUrl } from '~/shared/types/StringUrl'
 
 const props = defineProps<{
   characterName?: string

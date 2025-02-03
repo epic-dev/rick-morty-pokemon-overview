@@ -1,4 +1,4 @@
-import type { ViewMode } from '~/types/ViewMode'
+import type { ViewMode } from '~/shared/types/ViewMode'
 import { defineStore } from 'pinia'
 
 export const useViewModeStore = defineStore('viewMode', () => {

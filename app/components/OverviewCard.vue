@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { StringUrl } from '~/types/StringUrl'
+import type { StringUrl } from '~/shared/types/StringUrl'
 import HoverableContainer from './HoverableContainer.vue'
 
 defineProps<{

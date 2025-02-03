@@ -1,4 +1,4 @@
-import type { StringUrl } from '~/types/StringUrl'
+import type { StringUrl } from '~/shared/types/StringUrl'
 
 export interface PokemonResponseItem {
   name: string

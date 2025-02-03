@@ -16,6 +16,7 @@ function rmItemMapper(item: Character): CharacterUnifiedItem {
   return {
     id: String(item.id),
     name: item.name,
+    image: item.image,
     detailsLocation: item.url,
   }
 }
