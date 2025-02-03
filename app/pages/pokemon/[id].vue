@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Pokemon } from '~/shared/interfaces/api/pokemon/Pokemon'
+import NavigateBack from '~/components/common/NavigateBack.vue'
 
 const route = useRoute()
 const params = route.params as { id: string } // FIXME: there is should be better way
@@ -7,7 +8,8 @@ const { data: { value: pokemon } } = await usePokemonData<Pokemon>(`/pokemon/${p
 </script>
 
 <template>
-  <UContainer class="py-8">
+  <UContainer class="py-8 space-y-4">
+    <NavigateBack />
     <OverviewCharacterDetails :character-name="pokemon?.name" :character-image-url="pokemon?.sprites.front_default">
       <template #characterSpecs>
         <div class="flex sm:gap-6 gap-4 flex-col">

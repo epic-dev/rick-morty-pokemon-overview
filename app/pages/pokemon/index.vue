@@ -2,6 +2,7 @@
 import type { Pokemon } from '~/shared/interfaces/api/pokemon/Pokemon'
 import type { PokemonApiResponse } from '~/shared/interfaces/api/pokemon/PokemonApiResponse'
 import type { CharacterUnifiedItem } from '~/shared/interfaces/CharacterUnifiedItem'
+import { useBackNavigation } from '~/composables/useBackNavigation'
 import { ITEMS_PER_PAGE_COUNT } from '~/shared/constants/consts'
 import { mapPokemonApiResponseToViewModel } from '~/utils/dataToViewModel'
 
@@ -9,7 +10,8 @@ definePageMeta({
   layout: 'overview',
 })
 
-const currentPage = ref(1)
+const { currentPage, willGetBackTo } = useBackNavigation()
+
 const offset = computed(() => {
   return (currentPage.value - 1) * ITEMS_PER_PAGE_COUNT
 })
@@ -20,9 +22,7 @@ const isLoading = ref(false)
 
 watch(
   currentPage,
-  async () => {
-    console.warn('debug RUN WATCH EFFECT')
-
+  async (page) => {
     isLoading.value = true
     const {
       data: { value: pokemonData },
@@ -59,6 +59,7 @@ watch(
       console.warn(e)
     }
     isLoading.value = false
+    willGetBackTo(page)
   },
   { immediate: true },
 )

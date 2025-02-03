@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { RickAndMortyApiResponse } from '~/shared/interfaces/api/rickAndMorty/RickAndMortyApiResponse'
+import { useBackNavigation } from '~/composables/useBackNavigation'
 import { ITEMS_PER_PAGE_COUNT } from '~/shared/constants/consts'
 import { mapRickAndMortyApiResponseToViewModel } from '~/utils/dataToViewModel'
 
@@ -7,7 +8,8 @@ definePageMeta({
   layout: 'overview',
 })
 
-const currentPage = ref(1)
+const { currentPage, willGetBackTo } = useBackNavigation()
+
 const totalCount = ref(0)
 const isLoading = ref(false)
 
@@ -15,13 +17,14 @@ const characters = shallowRef()
 
 watch(
   currentPage,
-  async () => {
+  async (page) => {
+    console.warn('debug LOAD DATA')
     isLoading.value = true
     try {
       const {
         data: { value },
       } = await useRickAndMortyData<RickAndMortyApiResponse>(
-        `/character/?page=${currentPage.value}`,
+        `/character/?page=${page}`,
       )
 
       characters.value = mapRickAndMortyApiResponseToViewModel(value)
@@ -33,6 +36,7 @@ watch(
     }
     finally {
       isLoading.value = false
+      willGetBackTo(page)
     }
   },
   { immediate: true },
@@ -45,7 +49,10 @@ const store = useViewModeStore()
 
 <template>
   <OverviewPageHeader title="Wubba Lubba Dub Dub!" />
-  <div class="px-8 mb-4 space-y-4">
+  <div v-if="isLoading" class="flex items-center justify-center">
+    <UIcon name="i-heroicons-arrow-path" class="animate-spin w-8 h-8 text-gray-450" />
+  </div>
+  <div v-else class="px-8 mb-4 space-y-4">
     <OverviewCharacterList
       :is-list="store.currentMode === 'list'"
       :characters="characters"

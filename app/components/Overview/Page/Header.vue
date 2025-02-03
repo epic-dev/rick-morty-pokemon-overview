@@ -16,7 +16,7 @@ const active = computed(() => {
 </script>
 
 <template>
-  <header class="flex items-center px-8 py-4 mx-auto max-w-7xl">
+  <header class="flex items-center px-8 py-4">
     <h1
       class="grow md:text-4xl sm:text-3xl text-2xl font-exo text-gray-700 dark:text-gray-200"
     >

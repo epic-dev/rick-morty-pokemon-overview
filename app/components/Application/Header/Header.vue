@@ -4,7 +4,7 @@
       <nav>
         <ul class="flex gap-2">
           <li>
-            <ApplicationHeaderLink to="/" label="Home" />
+            <ApplicationHeaderLink to="/" label="Home" icon="i-heroicons-home" />
           </li>
           <li>
             <ApplicationHeaderLink to="/assignment" label="Read the assignment instructions" />
@@ -12,7 +12,7 @@
         </ul>
       </nav>
       <div class="ml-auto">
-        <UButton to="https://github.com/epic-dev/rick-morty-pokemon-overview" icon="mdi:github" color="blue" label="Source code" variant="outline" />
+        <UButton to="https://github.com/epic-dev/rick-morty-pokemon-overview" icon="mdi:github" color="blue" label="" variant="outline" />
       </div>
     </UContainer>
   </header>

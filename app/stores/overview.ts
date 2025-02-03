@@ -22,14 +22,7 @@ export const useOverviewStoreStore = defineStore('overview', () => {
       imageUrl: '/images/pokemon-overview-card.png',
     },
   ]
-  // FIXME unlikely necessary
-  const selectedOverview = ref<TvShowOverviewLocation | null>(null)
-  function selectOverview(value: TvShowOverviewLocation) {
-    selectedOverview.value = value
-  }
   return {
     tvShows,
-    selectedOverview,
-    selectOverview,
   }
 })

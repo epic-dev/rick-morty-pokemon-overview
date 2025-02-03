@@ -8,14 +8,17 @@ const props = defineProps<{
 const classes = computed(() => {
   return !props.isList ? 'flex-col' : ''
 })
+const imageSrc = computed(() => {
+  return props.character.image ?? '/images/no-image-128.png'
+})
 </script>
 
 <template>
   <div class="flex gap-4 items-start py-4" :class="classes">
     <div v-if="!isList" class="min-w-[6rem]">
-      <NuxtImg :src="character.image" loading="lazy" width="120px" class="rounded-md" />
+      <NuxtImg :src="imageSrc" loading="lazy" width="120px" class="rounded-md" />
     </div>
-    <UAvatar v-else :src="character.image" />
+    <UAvatar v-else :src="imageSrc" />
     <div class="flex flex-grow items-center justify-between w-full">
       <span class="capitalize font-exo">
         {{ character.name }}
