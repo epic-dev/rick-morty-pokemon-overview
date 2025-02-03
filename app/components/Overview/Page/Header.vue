@@ -11,7 +11,7 @@ function selectViewMode(value: ViewMode) {
   store.changeMode(value)
 }
 const active = computed(() => {
-  return 'dark:bg-gray-700 bg-slate-200'
+  return 'dark:bg-gray-700 bg-slate-200 text-primary-500'
 })
 </script>
 
@@ -27,14 +27,12 @@ const active = computed(() => {
         <UButton
           icon="i-heroicons-table-cells"
           variant="ghost"
-          color="gray"
           :class="{ [active]: store.currentMode === 'grid' }"
           @click="selectViewMode('grid')"
         />
         <UButton
           icon="i-heroicons-list-bullet"
           variant="ghost"
-          color="gray"
           :class="{ [active]: store.currentMode === 'list' }"
           @click="selectViewMode('list')"
         />

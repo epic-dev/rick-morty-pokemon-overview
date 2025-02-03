@@ -14,19 +14,28 @@ const classes = computed(() => {
    */
   return !props.isList ? 'grid grid-cols-[repeat(auto-fit,minmax(12rem,_1fr))]' : 'max-w-5xl'
 })
+
+const itemClasses = computed(() => {
+  /**
+   * TODO configure color rather than conditional classes
+   */
+  // return !props.isList ? 'dark:odd:bg-neutral-700 dark:even:bg-neutral-800 odd:bg-slate-100 even:bg-slate-50' : 'dark:odd:bg-neutral-700 dark:even:bg-neutral-800 odd:bg-primary-100 even:bg-primary-50'
+  return !props.isList ? 'dark:bg-gray-900 dark:hover:bg-gray-800/50 odd:bg-slate-100 even:bg-slate-50' : 'dark:bg-gray-900 dark:hover:bg-gray-800/50 bg-primary-100 hover:bg-primary-150/50'
+})
 </script>
 
 <template>
-  <div class="px-8 mb-4">
-    <ul :class="classes">
-      <li
-        v-for="character in characters" :key="character.name"
-        class="rounded-md dark:odd:bg-neutral-700 dark:even:bg-neutral-800 odd:bg-slate-100 even:bg-slate-50 mb-1"
-      >
-        <ULink :to="`${characterDetailsLocation}/${character.id}`">
+  <ul :class="classes">
+    <li
+      v-for="character in characters" :key="character.name"
+      class="rounded-md mb-1"
+      :class="itemClasses"
+    >
+      <ULink :to="`${characterDetailsLocation}/${character.id}`">
+        <HoverableContainer>
           <CharacterListItem :character="character" :is-list="isList" />
-        </ULink>
-      </li>
-    </ul>
-  </div>
+        </HoverableContainer>
+      </ULink>
+    </li>
+  </ul>
 </template>

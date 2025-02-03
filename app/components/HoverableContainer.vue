@@ -1,3 +1,4 @@
+// configure props: color, paddings
 <template>
   <UContainer
     class="
