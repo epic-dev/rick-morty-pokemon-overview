@@ -9,6 +9,7 @@ const { data: { value: rmCharacter } } = await useRickAndMortyData<Character>(`/
 
 <template>
   <UContainer class="py-8">
+    <NavigateBack />
     <OverviewCharacterDetails :character-name="rmCharacter?.name" :character-image-url="rmCharacter?.image">
       <template #characterSpecs>
         <div class="grid grid-cols-2 gap-x-2 mb-4">

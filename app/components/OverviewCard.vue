@@ -13,7 +13,6 @@ defineProps<{
     <div class="max-w-52 overflow-hidden">
       <NuxtImg
         :alt="title" sizes="lg:200px md:180px 160px" :src="imageUrl"
-        class="filter grayscale group-hover:grayscale-0" placeholder
       />
     </div>
     <div class="px-8 py-4">

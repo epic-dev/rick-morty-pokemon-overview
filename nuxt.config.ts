@@ -32,9 +32,11 @@ export default defineNuxtConfig({
     preset: 'netlify',
   },
 
-  image: {
-    provider: 'netlify',
-    domains: ['https://raw.githubusercontent.com', 'https://rickandmortyapi.com'],
+  $production: {
+    image: {
+      provider: 'netlify',
+      domains: ['https://raw.githubusercontent.com', 'https://rickandmortyapi.com'],
+    },
   },
 
   app: {

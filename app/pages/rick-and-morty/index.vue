@@ -18,7 +18,6 @@ const characters = shallowRef()
 watch(
   currentPage,
   async (page) => {
-    console.warn('debug LOAD DATA')
     isLoading.value = true
     try {
       const {
@@ -58,7 +57,7 @@ const store = useViewModeStore()
       :characters="characters"
       :character-details-location="characterDetailsLocation"
     />
-    <div v-if="!isLoading" class="flex justify-end">
+    <div v-if="!isLoading" class="flex justify-center">
       <UPagination
         v-model="currentPage"
         :max="5"
