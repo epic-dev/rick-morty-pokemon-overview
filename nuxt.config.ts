@@ -72,7 +72,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-08-14',
 
   apiParty: {
-    client: 'allow',
+    client: 'always',
     endpoints: {
       pokemon: {
         url: 'https://pokeapi.co/api/v2',
