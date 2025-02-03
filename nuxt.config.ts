@@ -32,6 +32,11 @@ export default defineNuxtConfig({
     preset: 'netlify',
   },
 
+  image: {
+    provider: 'netlify',
+    domains: ['https://raw.githubusercontent.com', 'https://rickandmortyapi.com'],
+  },
+
   app: {
     head: {
       viewport: 'width=device-width,initial-scale=1',
