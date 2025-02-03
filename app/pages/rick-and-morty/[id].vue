@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Character } from '~/shared/interfaces/api/rickAndMorty/Character'
+import NavigateBack from '~/components/common/NavigateBack.vue'
 
 const route = useRoute()
 const params = route.params as { id: string }
@@ -8,7 +9,7 @@ const { data: { value: rmCharacter } } = await useRickAndMortyData<Character>(`/
 </script>
 
 <template>
-  <UContainer class="py-8">
+  <UContainer class="py-8 space-y-4">
     <NavigateBack />
     <OverviewCharacterDetails :character-name="rmCharacter?.name" :character-image-url="rmCharacter?.image">
       <template #characterSpecs>
