@@ -17,10 +17,8 @@ const classes = computed(() => {
 })
 
 const itemClasses = computed(() => {
-  /**
-   * TODO configure color rather than conditional classes
-   */
-  return !props.isList ? 'dark:bg-gray-900 dark:hover:bg-gray-800/50 odd:bg-slate-100 even:bg-slate-50' : 'dark:bg-gray-900 dark:hover:bg-gray-800/50 bg-primary-100 hover:bg-primary-150/50'
+  // TODO configure ui.color rather than conditional classes
+  return !props.isList ? '' : 'dark:bg-gray-900 bg-primary-100'
 })
 </script>
 
@@ -29,10 +27,9 @@ const itemClasses = computed(() => {
     <li
       v-for="character in characters" :key="character.name"
       class="rounded-md mb-1"
-      :class="itemClasses"
     >
       <ULink :to="`${characterDetailsLocation}/${character.id}`">
-        <HoverableContainer>
+        <HoverableContainer class="h-full" :class="itemClasses">
           <CharacterListItem :character="character" :is-list="isList" />
         </HoverableContainer>
       </ULink>

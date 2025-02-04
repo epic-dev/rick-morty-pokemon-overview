@@ -6,7 +6,7 @@ const props = defineProps<{
   isList: boolean
 }>()
 const classes = computed(() => {
-  return !props.isList ? 'flex-col' : ''
+  return !props.isList ? 'flex-col items-start' : 'items-center'
 })
 const imageSrc = computed(() => {
   return props.character.image ?? '/images/no-image-128.png'
@@ -14,7 +14,7 @@ const imageSrc = computed(() => {
 </script>
 
 <template>
-  <div class="flex gap-4 items-start py-4" :class="classes">
+  <div class="flex gap-4 py-4" :class="classes">
     <div v-if="!isList" class="min-w-[6rem]">
       <NuxtImg :src="imageSrc" loading="lazy" width="120px" class="rounded-md" />
     </div>
