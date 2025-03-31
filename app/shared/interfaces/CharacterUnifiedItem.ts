@@ -1,4 +1,4 @@
-import type { StringUrl } from '~/types/StringUrl'
+import type { StringUrl } from '~/shared/types/StringUrl'
 
 /**
  * Utility interface to use it in a list of characters
